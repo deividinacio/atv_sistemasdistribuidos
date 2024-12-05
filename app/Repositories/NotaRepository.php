@@ -43,7 +43,7 @@ class NotaRepository
     {
         $nota = Nota::find($id);
         if ($nota) {
-            $nota->deleteNota();
+            $nota->delete(); // essa função não pode ter o mesmo nome que a função pai no caso a deleteNota
             return $nota;
         }
         return null;

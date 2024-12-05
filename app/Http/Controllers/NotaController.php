@@ -69,7 +69,7 @@ class NotaController extends Controller
    }
 
    // Deletar item 
-    public function deletarNota($id)
+    public function deleteNota($id) //  deleteNota
     {
         $nota = $this->notaService-> deleteNota($id);
 

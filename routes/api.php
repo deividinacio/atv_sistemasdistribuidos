@@ -26,7 +26,7 @@ Route::controller(NotaController::class) -> group(function(){
     Route::get('/notas/{id}',  'getNotaByID');
     Route::post('/notas',  'postNota'); 
     Route::patch('/notas/{id}',  'updateNota'); 
-    Route::delete('/alunos/{id}',  'deletarNota');
+    Route::delete('/notas/{id}',  'deleteNota');
 
 }) ;
 
