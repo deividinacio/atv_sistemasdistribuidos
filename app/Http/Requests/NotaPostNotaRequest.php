@@ -22,9 +22,9 @@ class NotaPostNotaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nota1' => 'required|numeric|max:10',
-            'nota2' => 'required|numeric|max:10', // coloque o tamanho desejado
-            'nota3' => 'required|numeric|max:10',
+            'nota1' => 'required|numeric|max:10|min:0',
+            'nota2' => 'required|numeric|max:10|min:0', // coloque o tamanho desejado
+            'nota3' => 'required|numeric|max:10|min:0',
         ];
     }
 }

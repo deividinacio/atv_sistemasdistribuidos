@@ -23,9 +23,9 @@ class NotaUpdateNotaRequest extends FormRequest
     {
        
         return [
-            'nota1' => 'numeric|max:10',
-            'nota2' => 'numeric|max:10', // coloque o tamanho desejado
-            'nota3' => 'numeric|max:10',
+            'nota1' => 'numeric|max:10|min:0',
+            'nota2' => 'numeric|max:10|min:0', // coloque o tamanho desejado
+            'nota3' => 'numeric|max:10|min:0',
         ];
     
     }
