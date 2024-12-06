@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AlunoController;
+use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\NotaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -29,4 +30,15 @@ Route::controller(NotaController::class) -> group(function(){
     Route::delete('/notas/{id}',  'deleteNota');
 
 }) ;
+
+Route::controller(DisciplinaController::class) -> group(function(){
+
+    Route::get('/disciplinas',  'getAllDisciplinas'); 
+    Route::get('/disciplinas/{id}',  'getDisciplinaByID');
+    Route::post('/disciplinas',  'postDisciplina'); 
+    Route::patch('/disciplinas/{id}',  'updateDisciplina'); 
+    Route::delete('/disciplinas/{id}',  'deleteDisciplina');
+
+}) ;
+
 

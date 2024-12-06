@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TurmaController extends Controller
+class TurmasController extends Controller
 {
     //
 }
