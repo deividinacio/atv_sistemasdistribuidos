@@ -3,6 +3,7 @@
 use App\Http\Controllers\AlunoController;
 use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\NotaController;
+use App\Http\Controllers\ProfessoresController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -38,6 +39,16 @@ Route::controller(DisciplinaController::class) -> group(function(){
     Route::post('/disciplinas',  'postDisciplina'); 
     Route::patch('/disciplinas/{id}',  'updateDisciplina'); 
     Route::delete('/disciplinas/{id}',  'deleteDisciplina');
+
+}) ;
+
+Route::controller(ProfessoresController::class) -> group(function(){
+
+    Route::get('/professores',  'getAllProfessores'); 
+    Route::get('/professores/{id}',  'getProfessorByID');
+    Route::post('/professores',  'postProfessor'); 
+    Route::patch('/professores/{id}',  'updateProfessor'); 
+    Route::delete('/professores/{id}',  'deleteProfessor');
 
 }) ;
 
