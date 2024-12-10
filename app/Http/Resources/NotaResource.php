@@ -14,6 +14,12 @@ class NotaResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        //return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'nota1' => $this -> nota1,
+            'nota2' => $this -> nota2,
+            'nota3' => $this -> nota3,
+        ];
     }
 }
