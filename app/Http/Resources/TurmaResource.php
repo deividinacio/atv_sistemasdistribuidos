@@ -15,6 +15,8 @@ class TurmaResource extends JsonResource
     public function toArray(Request $request): array
     {
        // return parent::toArray($request);
+
+       // AQUI COLOCAMOS SÓ OS CAMPOS QUE QUEREMOS RETORNAR DA CONSULTA
        return [
         'id' => $this->id,
         'nome' => $this -> nome,
