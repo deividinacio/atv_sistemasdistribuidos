@@ -4,6 +4,8 @@ use App\Http\Controllers\AlunoController;
 use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\NotaController;
 use App\Http\Controllers\ProfessoresController;
+use App\Http\Controllers\TurmaController;
+use App\Http\Controllers\TurmasController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -51,5 +53,16 @@ Route::controller(ProfessoresController::class) -> group(function(){
     Route::delete('/professores/{id}',  'deleteProfessor');
 
 }) ;
+
+Route::controller(TurmaController::class) -> group(function(){
+
+    Route::get('/turmas',  'getAllTurmas'); 
+    Route::get('/turmas/{id}',  'getTurmaByID');
+    Route::post('/turmas',  'postTurma'); 
+    Route::patch('/turmas/{id}',  'updateTurma'); 
+    Route::delete('/turmas/{id}',  'deleteTurma');
+
+}) ;
+
 
 

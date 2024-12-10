@@ -3,11 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Turmas extends Model
+class Turma extends Model
 {
-    // use SoftDeletes;
+     use SoftDeletes;
 
-    protected $table = 'turma';
+    protected $table = 'turmas';
     protected $fillable = ['nome', 'data_inicio', 'data_fim'];
 }
