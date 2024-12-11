@@ -34,6 +34,7 @@ class NotaResource extends JsonResource
             'nota2' => $this -> nota2,
             'nota3' => $this -> nota3,
             'aluno' => new AlunoResource($this->aluno),
+            'disciplina' => new DisciplinaResource($this-> disciplina),
             // 'aluno' => $alunos_data,
         ];
     }

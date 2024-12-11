@@ -19,6 +19,10 @@ class Aluno extends Model
 
     public function nota(){
       return $this->hasMany(Nota::class, 'alunos_id_fk', 'id');
-  }
+    }
+
+    public function disciplina(){
+      return $this->hasMany(Disciplinas::class, 'disciplinas_id_fk', 'id');
+    }
 
 }

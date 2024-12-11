@@ -18,9 +18,6 @@ class AlunoResource extends JsonResource
 
       // AQUI COLOCAMOS SÓ OS CAMPOS QUE QUEREMOS RETORNAR DA CONSULTA
       
-      
-
-      
       return[
         'id' => $this->id,
         'nome' => $this -> nome,
