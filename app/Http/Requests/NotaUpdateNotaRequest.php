@@ -26,6 +26,8 @@ class NotaUpdateNotaRequest extends FormRequest
             'nota1' => 'numeric|max:10|min:0',
             'nota2' => 'numeric|max:10|min:0', // coloque o tamanho desejado
             'nota3' => 'numeric|max:10|min:0',
+            'alunos_id_fk' => 'required|exists:alunos,id',
+
         ];
     
     }

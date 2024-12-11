@@ -16,4 +16,9 @@ class Aluno extends Model
       return  $this->belongsTo(Turma::class, 'turmas_id_fk', 'id'); // campo chave estrangeira e identificador da tabela estrangeira 
 
     }
+
+    public function nota(){
+      return $this->hasMany(Nota::class, 'alunos_id_fk', 'id');
+  }
+
 }
