@@ -26,6 +26,7 @@ class AlunoUpdateAlunoRequest extends FormRequest
             'nome' => 'string|max:255',
             'sobrenome' => 'string|max:255', // coloque o tamanho desejado
             'data_nascimento' => 'date',
+            'turmas_id_fk'=> 'required|exists:turmas,id',
         ];
     }
 }

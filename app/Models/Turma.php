@@ -11,4 +11,9 @@ class Turma extends Model
 
     protected $table = 'turmas';
     protected $fillable = ['nome', 'data_inicio', 'data_fim'];
+
+
+    public function alunos(){
+        return $this->hasMany(Aluno::class, 'turmas_id_fk', 'id');
+    }
 }

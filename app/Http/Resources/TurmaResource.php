@@ -17,11 +17,24 @@ class TurmaResource extends JsonResource
        // return parent::toArray($request);
 
        // AQUI COLOCAMOS SÓ OS CAMPOS QUE QUEREMOS RETORNAR DA CONSULTA
+
+        $alunos_data = [];
+        foreach($this-> alunos as $alunos)
+        {
+            array_push($alunos_data,[
+                "nome" => $alunos -> nome,
+                "sobrenome" => $alunos -> sobrenome,
+                "data_nascimento" => $alunos -> data_nascimento,
+            ]);
+        }
+
        return [
         'id' => $this->id,
         'nome' => $this -> nome,
         'data_inicio' => $this -> data_inicio,
         'data_fim' => $this -> data_fim,
+        'alunos' => $alunos_data
        ];
+
     }
 }
