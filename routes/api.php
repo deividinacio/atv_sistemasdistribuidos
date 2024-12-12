@@ -1,18 +1,17 @@
 <?php
 
 use App\Http\Controllers\AlunoController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\NotaController;
 use App\Http\Controllers\ProfessoresController;
 use App\Http\Controllers\TurmaController;
 use App\Http\Controllers\TurmasController;
+use App\Http\Middleware\jwtMiddleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
-
+Route::middleware(jwtMiddleware::class) -> group(function(){
 
 Route::controller(AlunoController::class) -> group(function(){
 
@@ -33,6 +32,9 @@ Route::controller(NotaController::class) -> group(function(){
     Route::delete('/notas/{id}',  'deleteNota');
 
 }) ;
+
+
+
 
 Route::controller(DisciplinaController::class) -> group(function(){
 
@@ -63,6 +65,20 @@ Route::controller(TurmaController::class) -> group(function(){
     Route::delete('/turmas/{id}',  'deleteTurma');
 
 }) ;
+
+}) ;
+
+
+Route::controller(AuthController::class) -> group(function(){
+
+    Route::post('/register',  'register'); 
+    Route::post('/login',  'login'); 
+
+}) ;
+
+
+
+
 
 
 
